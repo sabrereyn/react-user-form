@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import Card from "../UI/Card";
+import Button from "../UI/Button";
 import classes from "./Userform.module.css";
 
 const UserForm = () => {
@@ -49,7 +50,7 @@ const UserForm = () => {
             ></input>
           </div>
           <div>
-            <button type="submit">Add User</button>
+            <Button type="submit">Add User</Button>
           </div>
         </div>
       </form>
