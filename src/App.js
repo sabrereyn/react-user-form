@@ -1,5 +1,5 @@
 import { useState } from "react";
-import UserForm from "./components/NewUser/UserForm";
+import UserForm from "./components/Users/UserForm";
 import Users from "./components/Users/Users";
 
 let usersList = [
