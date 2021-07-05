@@ -1,3 +1,4 @@
+import { useState } from "react";
 import UserForm from "./components/NewUser/UserForm";
 import Users from "./components/Users/Users";
 
@@ -20,10 +21,18 @@ let usersList = [
 ];
 
 function App() {
+  const [users, setUser] = useState(usersList);
+
+  const addUserHandler = (user) => {
+    setUser((prevUser) => {
+      return [user, ...prevUser];
+    });
+  };
+
   return (
     <div>
-      <UserForm />
-      <Users items={usersList} />
+      <UserForm onNewUser={addUserHandler} />
+      <Users items={users} />
     </div>
   );
 }

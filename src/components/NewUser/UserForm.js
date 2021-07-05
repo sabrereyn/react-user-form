@@ -4,7 +4,7 @@ import Card from "../UI/Card";
 import Button from "../UI/Button";
 import classes from "./Userform.module.css";
 
-const UserForm = () => {
+const UserForm = (props) => {
   const [enteredUsername, setEnteredUsername] = useState("");
   const [enteredAge, setEnteredAge] = useState("");
 
@@ -19,12 +19,25 @@ const UserForm = () => {
   const submitHandler = (event) => {
     event.preventDefault();
 
+    if (enteredUsername.trim().length === 0 || enteredAge.trim().length === 0) {
+      return;
+    }
+    // '+' before enteredAge cast it to an int
+    if (+enteredAge < 1) {
+      return;
+    }
+
     const newUser = {
-      Username: enteredUsername,
-      Age: enteredAge,
+      id: Math.random().toString(),
+      username: enteredUsername,
+      age: enteredAge,
     };
 
-    console.log(newUser);
+    props.onNewUser(newUser);
+
+    setEnteredUsername("");
+    setEnteredAge("");
+    console.log(enteredUsername, enteredAge);
   };
 
   return (
