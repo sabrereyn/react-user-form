@@ -27,8 +27,9 @@ const UserForm = () => {
     <form onSubmit={submitHandler}>
       <div>
         <div>
-          <label>Username</label>
+          <label htmlFor="username">Username</label>
           <input
+            id="username"
             type="text"
             value={enteredUsername}
             onChange={usernameChangeHandler}
@@ -37,7 +38,7 @@ const UserForm = () => {
         <div>
           <label>Age (Years)</label>
           <input
-            type="text"
+            type="number"
             value={enteredAge}
             onChange={ageChangeHandler}
           ></input>
