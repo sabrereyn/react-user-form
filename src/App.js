@@ -2,15 +2,15 @@ import { useState } from "react";
 import UserForm from "./components/Users/UserForm";
 import Users from "./components/Users/Users";
 
-let usersList = [
+const DUMMY_USERS = [
   {
     id: 1,
-    username: "Sam",
+    username: "Arya",
     age: 29,
   },
   {
     id: 2,
-    username: "Sabre",
+    username: "Jasper",
     age: 25,
   },
   {
@@ -21,10 +21,13 @@ let usersList = [
 ];
 
 function App() {
-  const [users, setUser] = useState(usersList);
+  // Web application is initialized with dummy list above on starting up (placed into users)
+  const [users, setUser] = useState(DUMMY_USERS);
 
+  // Handles inputting new users from UserForm.js into users in useState above
   const addUserHandler = (user) => {
     setUser((prevUser) => {
+      // Input previous users information after adding new user
       return [user, ...prevUser];
     });
   };
