@@ -36,8 +36,9 @@ const UserForm = () => {
           ></input>
         </div>
         <div>
-          <label>Age (Years)</label>
+          <label htmlFor="age">Age (Years)</label>
           <input
+            id="age"
             type="number"
             value={enteredAge}
             onChange={ageChangeHandler}

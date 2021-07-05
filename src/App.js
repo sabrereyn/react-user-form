@@ -1,5 +1,5 @@
 import UserForm from "./NewUser/UserForm";
-import Users from "./Users/Users";
+import Users from "./components/Users/Users";
 
 let usersList = [
   {
