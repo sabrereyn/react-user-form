@@ -1,3 +1,5 @@
+import React from "react";
+
 import { useState } from "react";
 import UserForm from "./components/Users/UserForm";
 import Users from "./components/Users/Users";
@@ -34,10 +36,10 @@ function App() {
   };
 
   return (
-    <div>
+    <React.Fragment>
       <UserForm onNewUser={addUserHandler} />
       <Users items={users} />
-    </div>
+    </React.Fragment>
   );
 }
 

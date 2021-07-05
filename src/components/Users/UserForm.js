@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 
 import Card from "../UI/Card";
@@ -54,7 +55,7 @@ const UserForm = (props) => {
   };
 
   return (
-    <div>
+    <React.Fragment>
       {error && (
         <ErrorModal
           header={error.header}
@@ -81,7 +82,7 @@ const UserForm = (props) => {
           <Button type="submit">Add User</Button>
         </form>
       </Card>
-    </div>
+    </React.Fragment>
   );
 };
 

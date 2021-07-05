@@ -1,10 +1,11 @@
+import React from "react";
 import UsersList from "./UsersList";
 
 const Users = (props) => {
   return (
-    <div>
+    <React.Fragment>
       <UsersList items={props.items} />
-    </div>
+    </React.Fragment>
   );
 };
 
