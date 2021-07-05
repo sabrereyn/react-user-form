@@ -2,6 +2,7 @@ import { useState } from "react";
 import UserForm from "./components/Users/UserForm";
 import Users from "./components/Users/Users";
 
+// Dummy data
 const DUMMY_USERS = [
   {
     id: 1,
@@ -27,8 +28,8 @@ function App() {
   // Handles inputting new users from UserForm.js into users in useState above
   const addUserHandler = (user) => {
     setUser((prevUser) => {
-      // Input previous users information after adding new user
-      return [user, ...prevUser];
+      // Uses previous snapshot of 'users' and input new user
+      return [...prevUser, user];
     });
   };
 
